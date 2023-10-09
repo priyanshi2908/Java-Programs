@@ -1,0 +1,35 @@
+import java.util.*;
+class circularprime
+{
+    public static void main()
+    {
+        Scanner ob = new Scanner(System.in);
+        System.out.println("Enter number");
+        int n = ob.nextInt();
+        String str = String.valueOf(n);
+        int t = str.length();
+        int i , y , c=0 , c1=0,j;
+        char x ;
+        for( i = 1 ; i<= t ; i++ )
+        {
+            c1=0;
+            x = str.charAt(0);
+            str=str.substring(1)+x;
+            y = Integer.valueOf(str);
+            
+            for ( j = 1 ; j <=y ; j++ )
+            {
+                if((y % j)==0)
+                c1++;
+            }
+            if(c1==2)
+            c++;
+        }
+        
+        if ( c==t)
+        System.out.println("CIRCULAR PRIME");
+        else
+        System.out.println("NOT CIRCULAR PRIME");
+    }
+}
+            
