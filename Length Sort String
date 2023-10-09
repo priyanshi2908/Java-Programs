@@ -1,0 +1,45 @@
+import java.util.*;
+class lengthsort
+   {
+     public static void main()
+      {
+               Scanner ob = new Scanner(System.in);
+                System.out.println("Enter String");
+                String str=ob.nextLine();
+                StringTokenizer st = new StringTokenizer(str," ,*&^%$#@!");
+                int n = st.countTokens();
+                String a[] = new String[n];
+             int i , j;
+              for ( i = 0 ; i < n ; i++ ) 
+            {
+                    a[i] = st.nextToken();
+                 }
+        
+        for ( i = 0 ; i < n-1 ; i++ )
+        {
+            for( j = 0 ; j < n-1-i ; j++ )
+            {
+               if( a[j].length() > a[j+1].length() )
+               {
+                    String p = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = p;
+                }
+                
+                 if( a[j].length() == a[j+1].length() )
+                 {
+                     if ( a[j].compareToIgnoreCase(a[j+1])>0 )
+                      {
+                       String p = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = p;
+                       }
+                   }
+                }
+            }
+            
+            for (i=n-1;i>=0;i--)
+        System.out.print(a[i]+" " );
+    }
+}
+              
